@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilos.css">
-    <title>TO DO List iutu</title>
+    <title>TO DO List</title>
 </head>
 <body>
     <div class="container">
@@ -13,15 +13,13 @@
             <h2>To Do list</h2>
             <div class="filas">
                 <input type="text" id="input-box" placeholder="Agregá una nueva tarea">
-                <button>+</button>
+                <button onclick="agregarTarea()">+</button>
             </div>
             <ul id="lista-contenedor">
-                <li><input type="checkbox"> Tarea</li>
-                <li><input type="checkbox">Tarea</li>
-                <li><input type="checkbox">Tarea</li>
+                <li  onclick="tachado()" ><input type="checkbox">Recorrer el array acá, empieza con 0 tareas</li>
             </ul>
         </div>
     </div>
-    
+    <script src="javascript.js"></script>
 </body>
 </html>
