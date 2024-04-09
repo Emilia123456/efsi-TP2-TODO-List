@@ -25,16 +25,13 @@ function agregarTarea(id){
 function recargarListado(){
     document.querySelector('#lista-contenedor').innerHTML = "";
 
-    for(var i=0; i<array.length;i++){
-        var tachado = array[i].tachado ? 'tachado' : '';                    
-        
+    for(let i=0; i<array.length;i++){
         document.querySelector('#lista-contenedor').innerHTML += `
-        <li class="${tachado}" onclick="cambiarEstado(${array[i].id})"> 
+        <li id="${array[i].id}" class="${array[i].tachado ? `tachado` : ``}" onclick="cambiarEstado(${array[i].id})"> 
             ${array[i].texto} 
         </li>`         
     }
 }
-
 
 function crearNuevoObjeto(ID, txt, ahora){
     let obj = {
@@ -46,7 +43,13 @@ function crearNuevoObjeto(ID, txt, ahora){
     return obj; 
 }
 
-function combiarEstado(id){
-    //recorrer el array, encontrar por id el 
-    let copiaArray = array.slice();
+function cambiarEstado(id){
+    for(var i=0; i<array.length;i++){
+        if(array[i].id==id ){
+            array[i].tachado = !array[i].tachado
+            //document.getElementById(array[i].id).style.textDecoration = 'line-through';
+            recargarListado()
+        }
+    }
+    
 }
