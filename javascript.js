@@ -1,43 +1,52 @@
-const contenido = document.getElementById("input-box")
-const elementoLista = document.getElementById("lista-contenedor")
+var ID = 1;
 let ahora = Date.now(); 
 var array =[];
 
 var objeto = {
     id : 0,
-    txt : "cocinar", 
+    texto : "tarea", 
     date : ahora,
     tachado : false
 }
 
+function agregarTarea(id){
+    let contenido = document.getElementById(id)
 
-function agregarTarea(){
-    let contenido = document.getElementById("input-box")
-    if(contenido.value === '') {
-        alert("Error en el ingreso de datos")
-    } else {
-        let li = document.createElement("li");
+    if(contenido.value === '') { 
+        alert("Error en el ingreso de datos")   
+    }else{
+        objeto = crearNuevoObjeto(ID, contenido.value, ahora)
+        ID++;
         array.push(objeto);
-        document.querySelector('#lista-contenedor').innerHTML = contenido.value;
-       
-        console.log(objeto);
+        recargarListado();
     }
-    
-    
 }
 
-for(var i=0; i<array.length;i++){
-    var tachado = '';
-    if (array[i].tachado){
-        tachado = 'tachado'
-    }
+function recargarListado(){
+    document.querySelector('#lista-contenedor').innerHTML = "";
 
-    document.querySelector('#contenedor').innerHTML += `
-    <li class="${tachado}" onclick="cambiarEstado(${array[i].id})"> 
-        ${array[i].nombre} 
-    </li>` 
+    for(var i=0; i<array.length;i++){
+        var tachado = array[i].tachado ? 'tachado' : '';                    
+        
+        document.querySelector('#lista-contenedor').innerHTML += `
+        <li class="${tachado}" onclick="cambiarEstado(${array[i].id})"> 
+            ${array[i].texto} 
+        </li>`         
+    }
+}
+
+
+function crearNuevoObjeto(ID, txt, ahora){
+    let obj = {
+        id : ID,
+        texto : txt, 
+        date : ahora,
+        tachado : false
+    }
+    return obj; 
 }
 
 function combiarEstado(id){
     //recorrer el array, encontrar por id el 
+    let copiaArray = array.slice();
 }
