@@ -61,4 +61,6 @@ function cambiarEstado(id){
 
 function borrarTodo(){
     document.querySelector('#lista-contenedor').innerHTML = "";
+    let a = [];
+    array = a;
 }
