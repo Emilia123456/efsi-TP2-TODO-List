@@ -57,6 +57,18 @@ button{
     border-radius: 30px;
 }
 
+.botonEliminar{
+    border: none;
+    outline: none;
+    padding: 5px 15px;
+    background: lightblue;
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+    border-radius: 30px;
+    float: right;
+}
+
 ul li{
     list-style: none;
     font-size: 17px;

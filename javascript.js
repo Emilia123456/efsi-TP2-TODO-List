@@ -1,11 +1,10 @@
 var ID = 1;
-let ahora = Date.now(); 
 var array =[];
-
+let ahora = Date.now();
 var objeto = {
     id : 0,
     texto : "tarea", 
-    date : ahora,
+    date : `21-03-2007`,
     tachado : false
 }
 
@@ -34,6 +33,12 @@ function recargarListado(){
 }
 
 function crearNuevoObjeto(ID, txt, ahora){
+    /* let ahora = Date.now(); 
+    let dia = ahora.getDay();
+    let mes = ahora.getMonth()-1;
+    let ano = ahora.getFullYear();       esto no funca
+    let fecha = `${dia}-${mes}-${ano}`   pero falta todoo lo que es fechas y la tarea que se realizo mas rapido*/
+
     let obj = {
         id : ID,
         texto : txt, 
@@ -47,9 +52,13 @@ function cambiarEstado(id){
     for(var i=0; i<array.length;i++){
         if(array[i].id==id ){
             array[i].tachado = !array[i].tachado
-            //document.getElementById(array[i].id).style.textDecoration = 'line-through';
+            //document.getElementById(array[i].id).style.textDecoration = 'line-through'; podes hacer esto o recargar el listado denuevo
             recargarListado()
         }
     }
     
+}
+
+function borrarTodo(){
+    document.querySelector('#lista-contenedor').innerHTML = "";
 }
