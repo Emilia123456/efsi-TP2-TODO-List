@@ -8,7 +8,7 @@
 .container{
     width: 100%;
     min-height: 100vh;
-    background: lightblue;
+    background: rgb(7, 3, 44);
     padding: 10px;
 }
 
@@ -50,9 +50,9 @@ button{
     border: none;
     outline: none;
     padding: 3px 35px;
-    background: lightblue;
+    background: rgb(7, 3, 44);
     color: white;
-    font-size: 50px;
+    font-size: 40px;
     cursor: pointer;
     border-radius: 30px;
 }
@@ -61,7 +61,7 @@ button{
     border: none;
     outline: none;
     padding: 5px 15px;
-    background: lightblue;
+    background: rgb(7, 3, 44);
     color: white;
     font-size: 17px;
     cursor: pointer;
@@ -79,4 +79,10 @@ ul li{
 
 .tachado{
     text-decoration:line-through;
+}
+
+.fechas{
+    color: rgb(104, 104, 104);
+    font-size: 14px;
+    padding-top: 0px;
 }
